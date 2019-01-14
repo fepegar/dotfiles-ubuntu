@@ -44,4 +44,4 @@ export FS_FREESURFERENV_NO_OUTPUT=1
 export FREESURFER_HOME=/usr/local/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
-
+DEFAULT_USER="fernando"

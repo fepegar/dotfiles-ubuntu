@@ -76,10 +76,10 @@ alias untar="tar xvzf"
 
 alias clc="clear"
 
-# Print KCL id
-alias kcl="less ~/Desktop/kcl.txt"
-
 alias itksnap="/home/fernando/opt/itksnap-3.8.0-beta-20181028-Linux-gcc64/bin/itksnap"
 
 # Put file content into clipboard
 alias cfile="xclip -sel cli < "
+
+# Mount comic
+alias mcomic="sshfs fperezga@comic100.cs.ucl.ac.uk: /mnt/comic -o ssh_command='ssh -t fperezga@storm.cs.ucl.ac.uk ssh'"

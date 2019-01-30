@@ -82,4 +82,4 @@ alias itksnap="/home/fernando/opt/itksnap-3.8.0-beta-20181028-Linux-gcc64/bin/it
 alias cfile="xclip -sel cli < "
 
 # Mount comic
-alias mcomic="sshfs fperezga@comic100.cs.ucl.ac.uk: /mnt/comic -o ssh_command='ssh -t fperezga@storm.cs.ucl.ac.uk ssh'"
+alias mcomic="sshfs fperezga@comic100.cs.ucl.ac.uk:/ /mnt/comic -o ssh_command='ssh -t fperezga@storm.cs.ucl.ac.uk ssh'"

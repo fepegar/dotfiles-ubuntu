@@ -75,3 +75,10 @@ sudo apt install libgl1-mesa-dev libxt-dev
 
 # To run FSL bet
 sudo apt install libopenblas-base
+
+# To use NiftyReg with CUDA
+sudo apt install gcc-6 g++-6
+
+# ccmake
+sudo apt-get install cmake-curses-gui
+

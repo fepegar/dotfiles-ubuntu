@@ -27,8 +27,8 @@ mc() {
 alias gtree='git ls-tree -r master --name-only'
 
 # (De)activate conda envs
-alias act='source activate'
-alias dact='source deactivate'
+alias act='conda activate'
+alias dact='conda deactivate'
 
 # Open man pages as PDF (https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 function manpdf() {

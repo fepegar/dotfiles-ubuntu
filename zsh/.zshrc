@@ -94,13 +94,11 @@ source $ZSH/oh-my-zsh.sh
 DEFAULT_USER="fernando"
 
 
-# Why isn't .zshenv sourced?
-# source ~/.zshenv
-
-
-
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
+# So that pasting is not slow
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/513#issuecomment-379145092
+export ZSH_HIGHLIGHT_MAXLENGTH=200

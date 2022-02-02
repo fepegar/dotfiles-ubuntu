@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -55,7 +57,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting colored-man-pages)
+plugins=(git gitfast tmux colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,8 +92,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-# SO that it's not prompted by the shell
-DEFAULT_USER="fernando"
+# So that it's not prompted by the shell
+# DEFAULT_USER="fernando"
 
 
 
@@ -102,3 +104,25 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # So that pasting is not slow
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/513#issuecomment-379145092
 export ZSH_HIGHLIGHT_MAXLENGTH=200
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/fernando/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/fernando/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/fernando/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/fernando/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# https://github.com/tensorflow/tensorflow/issues/20271#issuecomment-399950439
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
+
+
+# added by travis gem
+[ -f /home/fernando/.travis/travis.sh ] && source /home/fernando/.travis/travis.sh

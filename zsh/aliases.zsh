@@ -10,17 +10,12 @@ alias pl='print -l'
 alias less='less -MN'
 
 # Directories size
-alias diru='du -sh * | gsort -hr'
+alias diru="du -ah -d 0 .* * | sort -hr"
+alias diruv="du -ah -d 0 * | sort -hr"
 
 # Recent history
 rhist() {
-  fc -l -"$1"
-}
-
-# mkdir and cd inside
-mc() {
-  mkdir "$1"
-  cd "$1"
+    fc -l -"$1"
 }
 
 # For the dotfiles repo
@@ -32,7 +27,7 @@ alias dact='conda deactivate'
 
 # Open man pages as PDF (https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
+    man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
 # Python HTTP server
@@ -62,7 +57,7 @@ ql() {
 }
 
 # Free space
-alias free="conda clean --all -y && brew cleanup"
+alias free="conda clean --all -y && pip cache purge"
 
 alias count="cd ~/git/mres-project-report/ && texcount -1 -sum -inc Thesis.tex && 1"
 
@@ -76,10 +71,23 @@ alias untar="tar xvzf"
 
 alias clc="clear"
 
-alias itksnap="/home/fernando/opt/itksnap-3.8.0-beta-20181028-Linux-gcc64/bin/itksnap"
-
 # Put file content into clipboard
 alias cfile="xclip -sel cli < "
 
 # Mount comic
 alias mcomic="sshfs fperezga@comic100.cs.ucl.ac.uk:/ /mnt/comic -o ssh_command='ssh -t fperezga@storm.cs.ucl.ac.uk ssh'"
+
+# Disable autocorrect for some commands
+alias ipython="nocorrect ipython"
+
+# tldr
+alias man="tldr"
+
+# ffmpeg
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
+
+# remove conda environment
+remenv() {
+    conda remove --all -n $1 -y && free
+}
